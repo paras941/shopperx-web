@@ -20,7 +20,7 @@ No backend. No payments. Clean frontend logic only.
 - React
 - JavaScript / TypeScript
 - Vite
-- CSS / Tailwind CSS
+- CSS / Tailwind CSS.
 
 ---
 
