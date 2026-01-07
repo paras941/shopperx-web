@@ -24,7 +24,7 @@ No backend. No payments. Clean frontend logic only.
 
 ---
 
-## 📦 Installation & Setup
+## 📦 Installation & Setup.
 
 ```bash
 npm install
