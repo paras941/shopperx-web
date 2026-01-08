@@ -1,4 +1,4 @@
-# 🛒 Commerce Shot
+# 🛒 Commerce Shop
 
 A simple **frontend-only e-commerce web application** built with **React**.  
 The project focuses on UI, product listing, cart functionality, and basic state management.
