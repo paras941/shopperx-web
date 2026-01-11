@@ -24,21 +24,4 @@ Authentication, payments, and backend APIs can be added later.
 * React Router (for navigation)
 * Context API / useState (state management)
 
-📂 Project Structure
-src/
-│── components/
-│   * Navbar/
-│   * ProductCard/
-│   *CartItem/
-│
-│── pages/
-│   * Home.jsx
-│   * Product.jsx
-│   * Cart.jsx
-│
-│── context/
-│   * CartContext.jsx
-│
-│  * assets/
-│  *App.jsx
-│  * main.jsx
+
