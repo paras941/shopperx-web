@@ -6,7 +6,7 @@ This project is designed to demonstrate production‑style frontend structure su
 
 ---
 
-Live Demo here : [click here](https://shopperx-web-7i4n.vercel.app)
+Live Demo here : [click here](https://shopperx-web-dsbu.vercel.app)
 ## 🚀 Tech Stack
 
 * React (Vite)
