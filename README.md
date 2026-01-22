@@ -88,4 +88,4 @@ npm run dev
 
 ---
 
-> Built for learning, portfolio, and placement preparation..
+> Built for learning, portfolio, and placement preparation.
