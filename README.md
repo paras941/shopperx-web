@@ -2,11 +2,11 @@
 
 A modern, responsive e‑commerce web application built with **React** showcasing real‑world usage of core React concepts like `useState`, `useContext`, `useEffect`, props, routing, and component‑based architecture.
 
-This project is designed to demonstrate production‑style frontend structure suitable for placement portfolios and technical interviews..
+This project is designed to demonstrate production‑style frontend structure suitable for placement portfolios and technical interviews.
 
 ---
 
-Live Demo here : [click here](https://shopperx-web-dsbu.vercel.app)
+🌐 Live Demo :  [click here](https://shopperx-web-dsbu.vercel.app)
 ## 🚀 Tech Stack
 
 * React (Vite)
@@ -20,24 +20,43 @@ Live Demo here : [click here](https://shopperx-web-dsbu.vercel.app)
 ## 📂 Project Structure
 
 ```
-shpper-site/
-├──my-app
-|   ├── src/
+shopperx-web/
+├── public/
+├── src/
+│   ├── assets/
 │   ├── Components/
-│   │   ├── Navbar/
+│   │   ├── Breadcrumbs/
+│   │   ├── CartItems/
+│   │   ├── DescriptionBox/
+│   │   ├── Footer/
 │   │   ├── Hero/
-│   │   ├── ProductCard/
-│   │   └── Cart/
+│   │   ├── Item/
+│   │   ├── Navbar/
+│   │   ├── NewCollections/
+│   │   ├── NewsLetter/
+│   │   ├── Offers/
+│   │   ├── Popular/
+│   │   ├── ProductDisplay/
+│   │   └── RelatedProducts/
 │   ├── Context/
 │   │   └── ShopContext.jsx
 │   ├── Pages/
 │   │   ├── Shop.jsx
 │   │   ├── Product.jsx
 │   │   └── Cart.jsx
+│   ├── App.css
 │   ├── App.jsx
-│   └── main.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── index.html
 │
-└── package.json
+├── .gitignore
+├── eslint.config.js
+├── package.json
+├── package-lock.json
+├── README.md
+└── LICENSE
+
 ```
 
 ---
@@ -56,6 +75,7 @@ shpper-site/
 | Reusable Components   | ProductCard, Hero, Navbar   | Clean component architecture                       |
 
 ---
+
 
 ## 🧠 Core Functionalities
 
