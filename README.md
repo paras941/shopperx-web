@@ -2,7 +2,7 @@
 
 A modern, responsive e‑commerce web application built with **React** showcasing real‑world usage of core React concepts like `useState`, `useContext`, `useEffect`, props, routing, and component‑based architecture.
 
-This project is designed to demonstrate production‑style frontend structure suitable for placement portfolios and technical interviews..
+This project is designed to demonstrate production‑style frontend structure suitable for placement portfolios and technical interviews.
 
 ---
 
