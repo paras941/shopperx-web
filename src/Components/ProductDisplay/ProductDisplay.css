@@ -1,6 +1,19 @@
 .productdisplay{
     display: flex;
     margin: 0px 170px;
+    opacity: 0;
+    animation: productReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes productReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .productdisplay-left{
@@ -18,12 +31,30 @@
     height: 163px;
     border-radius: 10px;
     cursor: pointer;
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    animation: thumbReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.productdisplay-img-list img:nth-child(1) { animation-delay: 0.2s; }
+.productdisplay-img-list img:nth-child(2) { animation-delay: 0.35s; }
+.productdisplay-img-list img:nth-child(3) { animation-delay: 0.5s; }
+.productdisplay-img-list img:nth-child(4) { animation-delay: 0.65s; }
+
+@keyframes thumbReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .productdisplay-img-list img:hover{
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: scale(1.08) translateX(3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
 }
 
 .productdisplay-main-img{
@@ -31,12 +62,44 @@
     height: 700px;
     border-radius: 16px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: mainImgReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s;
+    opacity: 0;
+}
+
+@keyframes mainImgReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.productdisplay-main-img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.22);
 }
 
 .productdisplay-right{
     margin: 0px 70px;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    animation: rightReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s;
+}
+
+@keyframes rightReveal {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .productdisplay-right h1{
@@ -55,6 +118,14 @@
     font-size: 16px;
 }
 
+.productdisplay-right-star img {
+    transition: transform 0.3s ease;
+}
+
+.productdisplay-right-star img:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
 .productdisplay-right-prices{
     display: flex;
     margin: 40px 0px;
@@ -70,7 +141,13 @@
 
 .productdisplay-right-prices-new{
     color: #ff4141;
-}  
+    animation: pricePulse 3s ease-in-out infinite;
+}
+
+@keyframes pricePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
 
 .productdisplay-right-size div{
     padding: 12px 22px;
@@ -81,14 +158,14 @@
     font-weight: 600;
     color: #374151;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: all .25s ease;
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .productdisplay-right-size div:hover{
-    background: #ffffff;
-    color: #ff4141;
-    box-shadow: 0 8px 20px rgba(255,65,65,0.25);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff4141, #ff6a6a);
+    color: white;
+    box-shadow: 0 8px 22px rgba(255,65,65,0.3);
+    transform: translateY(-3px);
 }
 
 
@@ -111,11 +188,11 @@
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    transition: all .25s ease;
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .productdisplay-right-size div:hover{
-    background: #ff4141;
+    background: linear-gradient(135deg, #ff4141, #ff6a6a);
     color: white;
     transform: translateY(-3px);
 }
@@ -126,6 +203,7 @@
     font-size: 16px;
     font-weight: 600;
     background: linear-gradient(135deg, #ff4141, #ff6a6a);
+    background-size: 200% 200%;
     color: white;
     margin-bottom: 40px;
     border: none;
@@ -133,12 +211,33 @@
     border-radius: 999px;
     cursor: pointer;
     box-shadow: 0 12px 35px rgba(255,65,65,0.45);
-    transition: all .3s ease;
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.productdisplay-right button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.productdisplay-right button:hover::before {
+    left: 100%;
 }
 
 .productdisplay-right button:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 18px 45px rgba(255,65,65,0.65);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 45px rgba(255,65,65,0.55);
+}
+
+.productdisplay-right button:active {
+    transform: scale(0.95);
 }
 
 .productdisplay-right-category{

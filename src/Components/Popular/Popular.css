@@ -4,6 +4,24 @@
     align-items: center;
     gap: 12px;
     height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.popular::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,65,65,0.05) 0%, transparent 50%);
+    animation: rotateBg 20s linear infinite;
+}
+
+@keyframes rotateBg {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .popular h1{
@@ -12,18 +30,40 @@
     font-weight: 800;
     margin-top: 20px;
     letter-spacing: -0.5px;
+    position: relative;
+    opacity: 0;
+    animation: titleReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .popular hr{
-    width: 140px;
+    width: 0;
     height: 4px;
     border-radius: 10px;
     border: none;
     background: linear-gradient(90deg, #ff4141, #ff6a6a);
+    animation: hrExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s;
+}
+
+@keyframes hrExpand {
+    from { width: 0; }
+    to { width: 140px; }
 }
 
 .popular-item{
     margin-top: 50px;
     display: flex;
     gap: 32px;
+    position: relative;
+    z-index: 1;
 }
