@@ -11,13 +11,31 @@ const getDefaultCart = () => {
   return cart;
 };
 
+const getDefaultWishlist = () => {
+  let wishlist = {};
+  for (let product of all_product) {
+    wishlist[product.id] = false;
+  }
+  return wishlist;
+};
+
 const ShopContextProvider = (props) => {
 
   const [cartItems, setCartItems] = useState(getDefaultCart());
+  const [wishlistItems, setWishlistItems] = useState(getDefaultWishlist());
+  const [toast, setToast] = useState(null);
+  const [user, setUser] = useState(null);
+
+  const showToast = (message, type = 'success') => {
+    setToast({ message, type });
+  };
+
+  const hideToast = () => {
+    setToast(null);
+  };
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    console.log(cartItems)
   };
 
   const removefromCart = (itemId) => {
@@ -25,6 +43,30 @@ const ShopContextProvider = (props) => {
       if (prev[itemId] <= 0) return prev;
       return { ...prev, [itemId]: prev[itemId] - 1 };
     });
+  };
+
+  const updateCartQuantity = (itemId, quantity) => {
+    setCartItems(prev => ({ ...prev, [itemId]: Math.max(0, quantity) }));
+  };
+
+  const clearCart = () => {
+    setCartItems(getDefaultCart());
+  };
+
+  const addToWishlist = (itemId) => {
+    setWishlistItems(prev => ({ ...prev, [itemId]: true }));
+  };
+
+  const removeFromWishlist = (itemId) => {
+    setWishlistItems(prev => ({ ...prev, [itemId]: false }));
+  };
+
+  const toggleWishlist = (itemId) => {
+    setWishlistItems(prev => ({ ...prev, [itemId]: !prev[itemId] }));
+  };
+
+  const getWishlistCount = () => {
+    return Object.values(wishlistItems).filter(Boolean).length;
   };
 
   const getTotalCartAmount = () => {
@@ -49,7 +91,35 @@ const ShopContextProvider = (props) => {
     return totalItem;
    }
 
-  const contextValue = {getTotalCartItems, getTotalCartAmount, all_product, cartItems, addToCart, removefromCart };
+  const loginUser = (userData) => {
+    setUser(userData);
+  };
+
+  const logoutUser = () => {
+    setUser(null);
+  };
+
+  const contextValue = {
+    getTotalCartItems, 
+    getTotalCartAmount, 
+    all_product, 
+    cartItems, 
+    addToCart, 
+    removefromCart,
+    updateCartQuantity,
+    clearCart,
+    wishlistItems,
+    addToWishlist,
+    removeFromWishlist,
+    toggleWishlist,
+    getWishlistCount,
+    toast,
+    showToast,
+    hideToast,
+    user,
+    loginUser,
+    logoutUser
+  };
 
   return (
     <ShopContext.Provider value={contextValue}>
