@@ -15,7 +15,7 @@ const Checkout = () => {
     address: '',
     city: '',
     state: '',
-    zipCode: '',
+    PinCode: '',
     country: 'United States',
     cardNumber: '',
     cardName: '',
@@ -130,8 +130,8 @@ const Checkout = () => {
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>ZIP Code</label>
-                  <input type="text" name="zipCode" value={formData.zipCode} onChange={handleChange} />
+                  <label>PIN Code</label>
+                  <input type="text" name="PinCode" value={formData.PinCode} onChange={handleChange} />
                 </div>
                 <div className="form-group">
                   <label>Country</label>
