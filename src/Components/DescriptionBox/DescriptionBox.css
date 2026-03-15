@@ -45,3 +45,33 @@
     line-height: 1.7;
     color: #374151;
 }
+
+@media (max-width: 1200px) {
+    .descriptionbox {
+        margin: 80px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .descriptionbox {
+        margin: 50px 14px;
+    }
+
+    .descriptionbox-navigator {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .descriptionbox-nav-box,
+    .descriptionbox-nav-box-fade {
+        width: auto;
+        padding: 0 16px;
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .descriptionbox-description {
+        padding: 22px 16px 30px;
+        border-radius: 0 10px 10px 10px;
+    }
+}

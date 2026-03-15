@@ -19,5 +19,5 @@ import RelatedProducts from '../Components/RelatedProducts/RelatedProducts';
   )
 }
 
-
+ 
 export default Product

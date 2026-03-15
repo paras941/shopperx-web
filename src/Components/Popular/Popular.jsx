@@ -17,4 +17,4 @@ import Item from '../Item/Item'
   )
 }
 
-export default Popular
+export default Popular 

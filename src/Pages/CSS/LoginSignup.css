@@ -1,12 +1,14 @@
 .loginsignup{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: radial-gradient(circle at top left, rgba(255,65,65,0.12), transparent 40%),
                 radial-gradient(circle at bottom right, rgba(0,0,0,0.08), transparent 40%),
                 linear-gradient(135deg, #ffffff, #f7f8fb);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 26px 14px;
+    box-sizing: border-box;
     position: relative;
     overflow: hidden;
 }
@@ -42,7 +44,8 @@
 }   
 
 .loginsignup-container{
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
     border-radius: 16px;
@@ -123,7 +126,6 @@
         opacity: 1;
         transform: translateX(0);
     }
-}
 }
 
 .loginsignup-container button{
@@ -367,4 +369,34 @@
     background: rgba(220, 53, 69, 0.1);
     border-radius: 8px;
     text-align: center;
+}
+
+@media (max-width: 640px) {
+    .loginsignup {
+        align-items: flex-start;
+    }
+
+    .loginsignup::before,
+    .loginsignup::after {
+        display: none;
+    }
+
+    .loginsignup-container {
+        padding: 28px 18px;
+    }
+
+    .loginsignup-container h1 {
+        font-size: 24px;
+    }
+
+    .loginsignup-fields {
+        gap: 12px;
+    }
+
+    .loginsignup-fields input,
+    .loginsignup-container button,
+    .submit-btn,
+    .social-btn {
+        height: 48px;
+    }
 }

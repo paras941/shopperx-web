@@ -1,6 +1,8 @@
 .navbar{
     display: flex;
     justify-content: space-around;
+  align-items: center;
+  gap: 20px;
     padding: 20px 0;
     background: #ffffff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -323,4 +325,114 @@
 
 .dropdown-item.logout svg {
   stroke: #ff4141;
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+
+  .nav-logo p {
+    font-size: 30px;
+  }
+
+  .nav-menu {
+    gap: 26px;
+    font-size: 17px;
+  }
+
+  .nav-login-cart {
+    gap: 20px;
+  }
+
+  .nav-login-cart button {
+    width: 130px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .nav-logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-logo p {
+    font-size: 24px;
+  }
+
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .search-bar {
+    order: 2;
+    width: 100%;
+    max-width: none;
+  }
+
+  .nav-login-cart {
+    gap: 14px;
+    margin-left: auto;
+  }
+
+  .user-dropdown {
+    right: -10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .nav-login-cart button {
+    width: 98px;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .user-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .nav-wishlist svg,
+  .nav-login-cart > a img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-cart-count {
+    width: 20px;
+    height: 20px;
+    margin-top: -24px;
+    margin-left: -42px;
+    font-size: 11px;
+  }
+
+  .nav-wishlist-count {
+    width: 17px;
+    height: 17px;
+    font-size: 10px;
+  }
 }

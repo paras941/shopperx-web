@@ -3,9 +3,10 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    height: 90vh;
+    min-height: 90vh;
     position: relative;
     overflow: hidden;
+    padding: 20px 20px 60px;
 }
 
 .popular::before {
@@ -63,7 +64,26 @@
 .popular-item{
     margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 32px;
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .popular {
+        min-height: auto;
+        padding: 20px 14px 40px;
+    }
+
+    .popular h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .popular-item {
+        gap: 16px;
+        margin-top: 26px;
+    }
 }

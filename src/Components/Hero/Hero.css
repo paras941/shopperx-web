@@ -1,5 +1,5 @@
 .hero{
-    height: 100vh;
+    min-height: 100vh;
     background: radial-gradient(circle at top left, rgba(255,65,65,0.18), transparent 40%),
                 linear-gradient(180deg, #ffffff, #f5f7fb 70%);
     display: flex;
@@ -49,7 +49,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 24px;
-    padding-left: 180px;
+    padding-left: clamp(24px, 8vw, 180px);
     line-height: 1.1;
     position: relative;
     z-index: 1;
@@ -91,7 +91,7 @@
 
 .hero-left p{
     color: #111827;
-    font-size: 92px;
+    font-size: clamp(44px, 7vw, 92px);
     font-weight: 800;
     line-height: 1;
     opacity: 0;
@@ -212,10 +212,66 @@
 }
 
 .hero-right img {
+    width: min(100%, 560px);
+    height: auto;
     animation: heroImageFloat 6s ease-in-out infinite;
 }
 
 @keyframes heroImageFloat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        min-height: auto;
+        padding: 36px 0;
+    }
+
+    .hero-left {
+        padding-left: 40px;
+    }
+
+    .hero-latest-btn {
+        width: 240px;
+        height: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        gap: 20px;
+        padding: 26px 0 32px;
+    }
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    .hero-left {
+        padding: 0 18px;
+        gap: 14px;
+    }
+
+    .hero-left h2 {
+        font-size: 16px;
+    }
+
+    .hero-hand-icon img {
+        width: 58px;
+    }
+
+    .hero-latest-btn {
+        margin-top: 18px;
+        width: 220px;
+        height: 50px;
+        font-size: 15px;
+    }
+
+    .hero-right {
+        margin-left: 0;
+        padding: 0 14px;
+    }
 }

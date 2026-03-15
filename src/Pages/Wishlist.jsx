@@ -16,7 +16,7 @@ const Wishlist = () => {
     addToCart(id);
     showToast('Added to cart!', 'success');
   };
-
+ 
   const handleRemove = (id) => {
     removeFromWishlist(id);
     showToast('Removed from wishlist', 'info');

@@ -16,7 +16,7 @@ import QuickView from '../QuickView/QuickView'
     addToCart(props.id);
     showToast('Added to cart!', 'success');
   };
-  
+   
   const handleWishlist = (e) => {
     e.preventDefault();
     toggleWishlist(props.id);

@@ -5,7 +5,7 @@
     gap: 12px;
     margin-bottom: 100px;
     position: relative;
-    padding: 60px 0;
+    padding: 60px 20px;
 }
 
 .new-collections::before {
@@ -77,8 +77,39 @@
 .collections{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    width: min(1240px, 100%);
     margin-top: 50px;
     gap: 32px;
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 1100px) {
+    .collections {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 820px) {
+    .new-collections h1 {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .collections {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 560px) {
+    .new-collections {
+        padding: 44px 14px;
+        margin-bottom: 56px;
+    }
+
+    .collections {
+        grid-template-columns: 1fr;
+    }
 }

@@ -147,3 +147,24 @@
   margin: 0;
   font-size: 14px;
 }
+
+@media (max-width: 900px) {
+  .search-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-input-wrapper {
+    padding: 7px 12px;
+  }
+
+  .search-result-item {
+    padding: 10px 12px;
+  }
+
+  .search-result-item img {
+    width: 42px;
+    height: 42px;
+  }
+}

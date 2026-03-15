@@ -276,3 +276,37 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 768px) {
+  .item-info {
+    padding: 0.85rem;
+  }
+
+  .item p {
+    font-size: 0.92rem;
+  }
+
+  .item-price-new {
+    font-size: 1rem;
+  }
+
+  .item-price-old {
+    font-size: 0.8rem;
+  }
+
+  .item-overlay {
+    top: 8px;
+    right: 8px;
+  }
+
+  .item-overlay button {
+    width: 34px;
+    height: 34px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .item-image-wrap::after {
+    display: none;
+  }
+}

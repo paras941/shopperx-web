@@ -1,6 +1,7 @@
 .breadcrum{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
     font-size: 14px;
     font-weight: 600;
@@ -21,4 +22,24 @@
 .breadcrum::before{
     content: "Home";
     color: #9ca3af;
-} 
+}
+
+@media (max-width: 1200px) {
+    .breadcrum {
+        margin: 40px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrum {
+        margin: 20px 14px;
+        font-size: 12px;
+        padding: 8px 12px;
+        gap: 6px;
+    }
+
+    .breadcrum img {
+        width: 10px;
+        height: 10px;
+    }
+}

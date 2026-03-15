@@ -169,3 +169,35 @@
     0%, 100% { opacity: 0.6; width: 75%; }
     50% { opacity: 0.9; width: 80%; }
 }
+
+@media (max-width: 768px) {
+    .footer {
+        gap: 28px;
+        padding: 42px 14px;
+    }
+
+    .footer-logo {
+        gap: 12px;
+    }
+
+    .footer-logo p {
+        font-size: 30px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        font-size: 15px;
+    }
+
+    .footer-social-icon {
+        gap: 12px;
+    }
+
+    .footer-copyright {
+        gap: 16px;
+        font-size: 14px;
+        text-align: center;
+    }
+}

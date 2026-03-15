@@ -25,7 +25,7 @@ import { ShopContext } from '../../Context/ShopContext';
     const handleWishlist = () => {
       toggleWishlist(product.id);
       showToast(isWishlisted ? 'Removed from wishlist' : 'Added to wishlist!', isWishlisted ? 'info' : 'success');
-    };
+    }; 
 
   return (
     <div className='productdisplay'>

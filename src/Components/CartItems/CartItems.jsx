@@ -8,7 +8,7 @@ const CardItems = () => {
     const {getTotalCartAmount,all_product,cartItems,removefromCart, addToCart, updateCartQuantity, showToast} =useContext(ShopContext);
     
     const handleRemove = (id) => {
-      removefromCart(id);
+      removefromCart(id); 
       showToast('Item removed from cart', 'info');
     };
 

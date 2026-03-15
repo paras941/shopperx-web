@@ -14,7 +14,7 @@ import hero_image from "../../assets/assets/Assets/hero_image.png";
              <img src={hand_icon} alt="" />
             </div>
             <p>collection</p>
-            <p>for everyone</p>
+            <p>for everyone</p> 
          </div>
          <div className="hero-latest-btn">
             <div>Latest Collection</div>
